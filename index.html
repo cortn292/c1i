@@ -1,158 +1,183 @@
-<!--
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Spotify Grid Template</title>
-<style>
-:root{
---gap:16px;
---card-radius:12px;
---bg:#0f0f11;
---card:#111217;
---muted:#9aa0a6;
-}
-*{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;background:linear-gradient(180deg,#070707,var(--bg));color:#e9eef3;margin:0;padding:32px}
-h1{font-size:20px;margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--card-radius);overflow:hidden;display:flex;flex-direction:column;min-height:140px;box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s ease,box-shadow .18s ease}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.75)}
-.art{width:100%;aspect-ratio:1/1;object-fit:cover;background:#222}
-.meta{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
-.title{font-weight:600;line-height:1.1}
-.subtitle{font-size:13px;color:var(--muted)}
-.actions{margin-top:auto;padding:12px 14px;border-top:1px solid rgba(255,255,255,0.03);display:flex;gap:8px}
-.btn{flex:1;padding:8px 10px;border-radius:10px;text-decoration:none;text-align:center;font-weight:600;background:linear-gradient(90deg,#1db954,#2ad06b);color:#05130a}
-.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600}
-/* small screen tweaks */
-@media (max-width:420px){body{padding:18px}.grid{gap:12px}}
-</style>
-</head>
-<body>
-<h1>Spotify grid — replace placeholders with your links</h1>
-<div class="grid">
-<!-- Copy one of these cards and change the data-spotify-url / img / title / subtitle -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jammin n' Manhattan</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #111;
-      color: #fff;
-      overflow-x: hidden;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A "Days" in My Life</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Poppins, sans-serif;
+            padding: 20px;
+            background-color: pink;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #690029;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .gallery {
+    display: grid;                        
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px;
+    padding: 20px 0;
+      
+
+        .gallery-item {
+    width: 100%;              
+    transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-item {
+                width: 200px;
+            }
+
+            .gallery-item img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-item {
+                width: 150px;
+            }
+
+            .gallery-item img {
+                height: 120px;
+            }
+        }
+          
+          @media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
     }
-    .waves-container {
-      position: relative;
-      height: 400px;
-      width: 100%;
-      overflow: hidden;
+}
+
+/* Updated existing breakpoints to use grid */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
     }
-    .wave {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100px; /* visible height */
-      transition: transform 0.4s ease, filter 0.4s ease;
-      overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
-    /* Example weekday waves (you’ll adjust top / bottom stacking) */
-    .wave.monday {
-      top: 0;
-      background: #f4a261; /* example color */
-    }
-    .wave.tuesday {
-      top: 80px;
-      background: #e76f51;
-    }
-    .wave.wednesday {
-      top: 160px;
-      background: #2a9d8f;
-    }
-    /* etc for other days */
-    
-    /* Hidden content inside each wave */
-    .wave .info {
-      position: absolute;
-      bottom: 10px;
-      left: 20px;
-      opacity: 0;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      transform: translateY(20px);
-    }
-    .wave .info img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 12px;
-      vertical-align: middle;
-    }
-    .wave .info .text {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .wave .info .text .title {
-      font-size: 1rem;
-      font-weight: bold;
-    }
-    .wave .info .text .artist {
-      font-size: 0.85rem;
-      color: #ddd;
-    }
-    .wave .info .embed {
-      margin-top: 8px;
-    }
-    
-    /* Hover styles */
-    .wave:hover {
-      transform: translateY(-20px);
-      z-index: 10;
-    }
-    .waves-container .wave:hover ~ .wave {
-      transform: translateY(20px);
-    }
-    .wave:hover .info {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+
+    </style>
 </head>
 <body>
-
-  <div class="waves-container">
-    <div class="wave monday">
-      <div class="info">
-        <img src="https://i.scdn.co/image/ab67616d0000b273e1c5d54d09afb71d84edb09f" alt="Cover Art" />
-        <div class="text">
-          <div class="title">Silencio</div>
-          <div class="artist">Rauw Alejandro</div>
+    <div class="container">
+        <h1>Jammin n' Manhattan</h1>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="https://example.com/link1" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/78/Flockanohands.png" alt="No Hands">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link2" target="_blank">
+                    <img src="https://static.qobuz.com/images/covers/oa/gi/wtfjbh13egioa_600.jpg" alt="Guabansexxx">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link3" target="_blank">
+                    <img src="https://images.genius.com/a11cb5068d74446a1e33b629a55a5ed6.1000x1000x1.png" alt="El Cuco">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link4" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/ca/Doja_Cat_-_Jealous_Type.png" alt="Jealous Type">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link5" target="_blank">
+                    <img src="https://images.genius.com/01bf4d679f0620289cab404c7ffeb526.1000x1000x1.png" alt="Wine Pon You">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link6" target="_blank">
+                    <img src="https://images.genius.com/8ec2925383adfbf00c243fee1fedb003.300x300x1.png" alt="Wassup">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link7" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Troye_Sivan_-_Rush.png" alt="Rush">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link8" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Doja_Cat_-_Mooo%21.png/250px-Doja_Cat_-_Mooo%21.png" alt="Moo">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link9" target="_blank">
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/8a/29/518a29f3-5915-662a-d861-663e6d0fbfe4/196872648911.jpg/600x600bf-60.jpg" alt="Sports Car">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="https://example.com/link10" target="_blank">
+                    <img src="https://cdn-images.dzcdn.net/images/cover/768affe187966317521169da5772470e/500x500.jpg" alt="Stray">
+                </a>
+            </div>
         </div>
-        <div class="embed">
-          <iframe
-            src="https://open.spotify.com/embed/track/4q8bfTmtDfgLGmDc5IuoIQ"
-            width="250"
-            height="80"
-            frameborder="0"
-            allow="encrypted-media"
-          ></iframe>
-        </div>
-      </div>
     </div>
-    <div class="wave tuesday"></div>
-    <div class="wave wednesday"></div>
-    <!-- add more days -->
-  </div>
-
-  <script>
-    // You can optionally dynamically fetch track info (title, artist, cover) using Spotify API,
-    // then inject into .info elements so you don’t have to hard-code them.
-  </script>
 </body>
 </html>
