@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jammin n' Manhattan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #E49AB0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #904C77;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #904C77;
+            font-size: 1.1em;
+        }
+
+        .gallery {
+            column-count: 4;
+            column-gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ECCFC3;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            break-inside: avoid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            display: block;
+            background: #e0e0e0;
+            min-height: 200px;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #904C77;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            color: #904C77;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Day One</h1>
+        <p class="subtitle">Lets take a looksieee, all images are done withing the same couple of days, with the "song of the day" being my most played song throughout those days.</p>
+    </header>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/78/Flockanohands.png" class="no-hands">
+            <div class="card-content">
+                <h3 class="card-title">Song of the Day</h3>
+                <p class="card-description">No Hands by Waka Flocka Flame and Roscoe Dash</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/1338566425501237408/1430019133030010960/IMG_0892.JPG?ex=68f84099&is=68f6ef19&hm=6e60f2f62bda3288dae6a1e7dd0fd24e1449e5c583e16a5407cb582d5098a662&=&format=webp&width=1744&height=1744" alt="Hyena" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Tattoo Ideas</h3>
+                <p class="card-description">Bored and created this based off my favorite animal. Radical duuuuude. </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430019740587528319/Untitled583_20250929154548.png?ex=68f8412a&is=68f6efaa&hm=88b02520c6b204090e1754e780476edb9306a44b3c1afcb70e3ef25d3725aca9&=&format=webp&quality=lossless&width=834&height=1744" alt="Moth" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Moth</h3>
+                <p class="card-description">Another drawing just to make a new lock screen. Very proud of it.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430019763328778350/IMG_8558.png?ex=68f84130&is=68f6efb0&hm=60989bde856fd11d87d164b61db409fdc48966075044ff2761c3ab781515dd93&=&format=webp&quality=lossless&width=526&height=700">
+            <div class="card-content">
+                <h3 class="card-title">Friendship is Magic Lowkey</h3>
+                <p class="card-description">Weekend spent with friends, they're basically my family :)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430020615217221694/Mantra-03.png?ex=68f841fb&is=68f6f07b&hm=510f077e624eb412294d7f5c6fe6baa4cfb2cd8d304f75283e0b25036acd0c25&=&format=webp&quality=lossless&width=1152&height=1152" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Me Is Enough</h3>
+                <p class="card-description">Project for another class where we turn a "Mantra" into some type of logo. Proud of it although it's simple.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430021651667619990/IMG_0754.png?ex=68f842f2&is=68f6f172&hm=d5bb329283ce6c7aac4aedbb9254c8bfeb36ac732404acf9216d4f60bd458fdf&=&format=webp&quality=lossless&width=1436&height=1744" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">"Tattooing"</h3>
+                <p class="card-description">Very compromising position but I was just drawing on my friend, trust me.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430022009739546737/IMG_0776.jpg?ex=68f84347&is=68f6f1c7&hm=4dffe1d68db585942133ad64310b63e5d6b190a19d594f54e249e64da900e0bf&=&format=webp&width=1472&height=1744" alt="Lake view" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Wilbur</h3>
+                <p class="card-description">Wilbur.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.discordapp.net/attachments/801582216525774921/1430022037665222776/IMG_0769.jpg?ex=68f8434e&is=68f6f1ce&hm=fd2ec863e6f5062f26daf7f00a9221c5b0957ae58ab32d078c0894c92c3a882b&=&format=webp&width=2048&height=1536" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">THE meal.</h3>
+                <p class="card-description">Could you tell we were hungry?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
